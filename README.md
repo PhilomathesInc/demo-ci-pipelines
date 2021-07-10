@@ -18,3 +18,6 @@ make run
 make cli
 ./demo-cli --help
 ```
+
+## GitHub Actions
+[Demo workflow](./github/workflows/github-actions-demo.yaml) that builds the Go application server and CLI.
