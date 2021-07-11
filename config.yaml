@@ -1,0 +1,6 @@
+# Server
+server:
+  protocol: http
+  hostname: localhost
+  port: 9091
+  timeout: 5s
