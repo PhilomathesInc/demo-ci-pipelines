@@ -1,6 +1,8 @@
 # Demo CI Pipelines
 Multiple CI pipelines for a demo application in Go.
 
+[![CircleCI](https://circleci.com/gh/PhilomathesInc/demo-ci-pipelines.svg?style=svg)](https://circleci.com/gh/circleci/circleci-docs)
+
 ## Go Application
 A demo application is written in Go that has a server and a CLI.
 - For creating the server, [net/http](https://golang.org/pkg/net/http) standard package is used.
