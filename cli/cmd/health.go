@@ -8,13 +8,14 @@ import (
 	"net/url"
 
 	"github.com/PhilomathesInc/demo-ci-pipelines/config"
-	"github.com/PhilomathesInc/demo-ci-pipelines/server"
 
 	"github.com/spf13/cobra"
 	"go.uber.org/zap"
 )
 
-var serverResponse string
+type serverResponse struct {
+	Status string `json:"status"`
+}
 
 func init() {
 	rootCmd.AddCommand(healthCmd)
@@ -52,14 +53,16 @@ func checkServerStatus() {
 		c.Logger.Error("could not read the response from the server", zap.String("error", err.Error()))
 		return
 	}
-	if err := json.Unmarshal(body, &serverResponse); err != nil {
+
+	srvResp := &serverResponse{}
+	if err := json.Unmarshal(body, &srvResp); err != nil {
 		c.Logger.Error("could not unmarshal the response from the server", zap.String("error", err.Error()))
 		return
 	}
-	if serverResponse == string(server.Healthy) {
+	if srvResp.Status == "ok" {
 		fmt.Println("The server responded with healthy status")
 	} else {
 		fmt.Println("The server is unhealthy")
 	}
-	fmt.Println("Response from server: ", serverResponse)
+	fmt.Printf("\nResponse from server: %+v\n", *srvResp)
 }

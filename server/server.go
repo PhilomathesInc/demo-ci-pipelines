@@ -1,7 +1,6 @@
 package server
 
 import (
-	"encoding/json"
 	"fmt"
 	"net/http"
 	"time"
@@ -41,11 +40,7 @@ func healthHandler(c *config.Config) func(w http.ResponseWriter, req *http.Reque
 	return func(w http.ResponseWriter, req *http.Request) {
 		c.Logger.Info("received request to check the server health")
 		w.Header().Add("Content-Type", "application/json")
-		response, err := json.Marshal(Healthy)
-		if err != nil {
-			c.Logger.Error("error marshaling status response", zap.String("error", err.Error()))
-		}
-		if _, err := w.Write(response); err != nil {
+		if _, err := w.Write([]byte(Healthy)); err != nil {
 			c.Logger.Error("error writing status response in ResponseWritter", zap.String("error", err.Error()))
 		}
 	}
