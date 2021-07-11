@@ -21,3 +21,8 @@ make cli
 
 ## GitHub Actions
 [Demo workflow](./github/workflows/github-actions-demo.yaml) that builds the Go application server and CLI.
+
+## Travis CI
+[Demo build config](./travis.yml) that builds the Go application server and CLI on linux and OS X.
+
+**Note:** Always run your Travis CI configuration through the [Travis CI Build Config Explorer](https://config.travis-ci.com/explore)
