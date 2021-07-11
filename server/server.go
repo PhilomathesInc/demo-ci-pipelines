@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"time"
 
-	"PhilomathesInc/demo-ci-pipelines/config"
+	"github.com/PhilomathesInc/demo-ci-pipelines/config"
 
 	"go.uber.org/zap"
 )

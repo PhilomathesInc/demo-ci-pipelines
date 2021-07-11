@@ -1,7 +1,7 @@
 package main
 
 import (
-	"PhilomathesInc/demo-ci-pipelines/cli/cmd"
+	"github.com/PhilomathesInc/demo-ci-pipelines/cli/cmd"
 )
 
 func main() {

@@ -7,8 +7,8 @@ import (
 	"net/http"
 	"net/url"
 
-	"PhilomathesInc/demo-ci-pipelines/config"
-	"PhilomathesInc/demo-ci-pipelines/server"
+	"github.com/PhilomathesInc/demo-ci-pipelines/config"
+	"github.com/PhilomathesInc/demo-ci-pipelines/server"
 
 	"github.com/spf13/cobra"
 	"go.uber.org/zap"

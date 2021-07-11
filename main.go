@@ -1,8 +1,8 @@
 package main
 
 import (
-	"PhilomathesInc/demo-ci-pipelines/config"
-	"PhilomathesInc/demo-ci-pipelines/server"
+	"github.com/PhilomathesInc/demo-ci-pipelines/config"
+	"github.com/PhilomathesInc/demo-ci-pipelines/server"
 )
 
 func main() {
