@@ -6,7 +6,6 @@ import (
 	"time"
 
 	"github.com/PhilomathesInc/demo-ci-pipelines/config"
-
 	"go.uber.org/zap"
 )
 

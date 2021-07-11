@@ -1,0 +1,24 @@
+name: GitHub Actions Demo
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    types: [ opened, synchronize, reopened ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: 1.15
+
+    - name: Start application server
+      run: make build
+
+    - name: Build application CLI binary
+      run: make cli
+   
+    - run: echo "📝 This job's status is ${{ job.status }}"
